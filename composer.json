@@ -1,0 +1,25 @@
+{
+    "name": "ronnyfriedland/cache",
+    "version": "1.0.0",
+    "description": "Extendable PHP cache",
+    "keywords": ["cache"],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.2.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ronny Friedland"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ronnyfriedland\\Cache\\": "src/",
+            "Ronnyfriedland\\Cache\\Adapter\\": "src/adapter"
+        },
+        "classmap": ["src/"]
+    }
+}
