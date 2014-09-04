@@ -26,5 +26,8 @@ class FileCacheTest extends PHPUnit_Framework_TestCase
         
         $this->assertFalse($this->cache->get("test") == null);
         $this->assertEquals("example", $this->cache->get("test"));
+
+        $this->cache->put("test", "example2");
+        $this->assertEquals("example2", $this->cache->get("test"));
     }
 }
