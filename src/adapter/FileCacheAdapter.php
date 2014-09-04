@@ -13,13 +13,23 @@ class FileCacheAdapter implements CacheAdapterInterface
     private $CACHE_STORE;
     
     /*
-     * The default constructor
+     * The constructor
+     * @param string cache location
      */
-    public function __construct()
-    {
-        $this->CACHE_STORE = sys_get_temp_dir().'dat/';
+    public function __construct($cacheLocation = NULL)
+    {   if($cacheLocation === NULL) 
+        {
+            $this->CACHE_STORE = sys_get_temp_dir().'dat/';
+        } else 
+        {
+            if (substr($cacheLocation, -1) != '/')
+            {
+                $cacheLocation = $cacheLocation . "/";
+            }
+            $this->CACHE_STORE = $cacheLocation;
+        }
     }
-    
+
     /**
      * Retrieve the value from cache
      */
