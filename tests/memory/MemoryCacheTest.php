@@ -9,7 +9,7 @@ class MemoryCacheTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->cache = new Cache(new MemoryCacheAdapter());
+        $this->cache = Cache::getInstance(new MemoryCacheAdapter());
     }
 
     public function testAddAndUpdate()

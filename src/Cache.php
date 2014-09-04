@@ -16,7 +16,7 @@ class Cache {
     
     protected static $_instance = null;
     
-    public static function getInstance(Ronnyfriedland\Cache\Adapter\CacheAdapterInterface $cacheAdapter)
+    public static function getInstance($cacheAdapter)
     {
         if (self::$_instance === null) {
             self::$_instance = new Cache($cacheAdapter);
