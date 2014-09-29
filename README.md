@@ -14,5 +14,5 @@ Extendable PHP Cache
 use Ronnyfriedland\Cache\Cache;
 use Ronnyfriedland\Cache\Adapter\FileCacheAdapter;
 
-$cache = new Cache(new FileCacheAdapter());
+$cache = Cache::getInstance(new FileCacheAdapter());
 ```
