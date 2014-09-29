@@ -6,9 +6,7 @@ include_once('Cache.php');
 include_once('adapter/CacheAdapterInterface.php');
 include_once('adapter/FileCacheAdapter.php');
 
-$CACHE = Cache::getInstance(new Ronnyfriedland\Cache\FileCacheAdapter());
-
-$files = $CACHE->listCache();
+$files = Cache::getInstance(new Ronnyfriedland\Cache\FileCacheAdapter())->listCache();
 
 if(null != $files) 
 {
