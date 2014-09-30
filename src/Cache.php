@@ -55,7 +55,6 @@ class Cache {
     
     /**
      * Put data to cache
-     * If cache directory does not exist it will be createdCache
      */
     public function put($key, $data) {
         $this->cacheAdapter->put($key, $data, Cache::TTL);

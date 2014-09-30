@@ -50,6 +50,7 @@ class FileCacheAdapter implements CacheAdapterInterface
     
     /**
      * Put the value into cache
+     * If cache directory does not exist it will be createdCache
      */
     public function put($key, $value, $ttl)
     {
