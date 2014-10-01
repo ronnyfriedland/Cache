@@ -19,7 +19,7 @@ class FileCacheAdapter implements CacheAdapterInterface
     public function __construct($cacheLocation = NULL)
     {   if($cacheLocation === NULL) 
         {
-            $this->CACHE_STORE = sys_get_temp_dir().'dat/';
+            $this->CACHE_STORE = sys_get_temp_dir().'cache/';
         } else 
         {
             if (substr($cacheLocation, -1) != '/')
