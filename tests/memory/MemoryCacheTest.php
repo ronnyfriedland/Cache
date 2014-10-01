@@ -21,4 +21,12 @@ class MemoryCacheTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($this->cache->get("test") == null);
         $this->assertEquals("example", $this->cache->get("test"));
     }
+    
+    public function testTTL()
+    {
+        $adapter = new MemoryCacheAdapter();
+        $adapter->put("ttl_test", "foo", -1);
+        
+        $this->assertTrue($adapter->get("ttl_test", -1) == null);
+    }
 }
