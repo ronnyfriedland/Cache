@@ -44,4 +44,17 @@ class FileCacheTest extends PHPUnit_Framework_TestCase
         $this->localCache->put("fsops", "test3");
         $this->assertEquals("test3", $this->localCache->get("fsops"));
     }
+    
+    public function testTTL()
+    {
+        $adapter = new FileCacheAdapter();
+        $adapter->put("ttl_test", "foo", -1);
+        
+        $this->assertTrue($adapter->get("ttl_test", -1) == null);
+
+        $adapter->put("ttl_test", "foo", 3600);
+        $this->assertFalse($adapter->get("ttl_test", 3600) == null);
+
+    }
+    
 }
